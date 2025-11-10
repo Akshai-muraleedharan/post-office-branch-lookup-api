@@ -24,7 +24,7 @@ const getPostOfficeData = (req, res) => __awaiter(void 0, void 0, void 0, functi
         }
         const config = {
             method: "get",
-            url: `https://api.postalpincode.in/postoffice/${value.postOfficeBranchName}`
+            url: `${process.env.INDIA_POST_BASE_URL}/${value.postOfficeBranchName}`
         };
         const axiosResponse = yield (0, axios_1.default)(config);
         if (axiosResponse.data[0].PostOffice === null) {
